@@ -68,7 +68,7 @@ export const projects = [
     description: 'Personalized spiritual practices and self-reflection tool with AI-generated assessments for emotional and spiritual wellness.',
     emoji: '🧘',
     color: 'from-emerald-400 to-emerald-600',
-    liveLink: 'https://ayni-wellness.app',
+    liveLink: 'https://play.google.com/store/apps/details?id=com.ayniwellness.ayni_wellness&hl=en',
     githubLink: null,
     type: 'Live App',
     tags: ['Flutter', 'Firebase', 'AI/ML']
@@ -80,7 +80,7 @@ export const projects = [
     description: 'Frantic word-building party game with real-time sabotage mechanics. Transforms your phone into the center of action.',
     emoji: '🎮',
     color: 'from-red-400 to-red-600',
-    liveLink: 'https://play.google.com/store/apps/details?id=panic.game',
+    liveLink: 'https://play.google.com/store/apps/details?id=com.bbs.panic_attack&hl=en',
     githubLink: null,
     type: 'Live App',
     tags: ['Flutter', 'WebSocket', 'Gaming']
@@ -93,7 +93,7 @@ export const projects = [
     emoji: '🎓',
     color: 'from-purple-400 to-purple-600',
     liveLink: null,
-    githubLink: 'https://github.com/nasir-uddin/acting-academy',
+    githubLink: 'https://github.com/nasir-uddin-dev/Acting-Academy-App',
     type: 'GitHub',
     tags: ['Flutter', 'GetX', 'Firebase']
   },
@@ -105,7 +105,7 @@ export const projects = [
     emoji: '🍔',
     color: 'from-orange-400 to-orange-600',
     liveLink: null,
-    githubLink: 'https://github.com/nasir-uddin/food-ltds',
+    githubLink: 'https://github.com/nasir-uddin-dev/Food-Burgers-App',
     type: 'GitHub',
     tags: ['Flutter', 'Clean Architecture', 'Dio']
   },
@@ -117,7 +117,7 @@ export const projects = [
     emoji: '🔗',
     color: 'from-yellow-400 to-yellow-600',
     liveLink: null,
-    githubLink: 'https://github.com/nasir-uddin/antilure',
+    githubLink: 'https://github.com/nasir-uddin-dev/antilure_mobile_apps',
     type: 'GitHub',
     tags: ['Flutter', 'Security', 'QR Code']
   },
@@ -129,7 +129,7 @@ export const projects = [
     emoji: '🎵',
     color: 'from-blue-400 to-blue-600',
     liveLink: null,
-    githubLink: 'https://github.com/nasir-uddin/sound-zero',
+    githubLink: 'https://github.com/nasir-uddin-dev/Sound-Zero-Audio-App',
     type: 'GitHub',
     tags: ['Flutter', 'Audio', 'In-app Purchase']
   }

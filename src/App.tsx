@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Menu, X, Mail, Phone, MapPin, ExternalLink, Code2 } from 'lucide-react';
+import { personalInfo, projects } from './data/portfolio';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -85,14 +86,13 @@ function App() {
             </div>
 
             <div className="hidden md:flex justify-center">
-              <div className="relative w-64 h-64 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl shadow-2xl flex items-center justify-center">
+              <div className="relative w-64 h-80 bg-gradient-to-br from-gray-900 to-black rounded-2xl shadow-2xl flex items-center justify-center overflow-hidden">
                 <div className="text-white text-center">
                   <img
-                    src="https://avatars.githubusercontent.com/u/3954?v=4"
+                    src="/profile.jpeg"
                     alt="Nasir Uddin"
-                    className="w-32 h-32 rounded-full border-4 border-white shadow-lg"
+                    className="w-full h-full object-cover"
                   />
-                  <p className="text-lg font-semibold">Mobile Dev</p>
                 </div>
               </div>
             </div>
@@ -207,113 +207,41 @@ function App() {
           <h2 className="section-title">Featured Projects</h2>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Project 1 */}
-            <div className="card-hover bg-white rounded-lg shadow overflow-hidden">
-              <div className="h-48 bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center">
-                <div className="text-white text-4xl">🧘</div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Ayni Wellness</h3>
-                <p className="text-gray-600 mb-4 text-sm">
-                  Personalized spiritual practices and self-reflection tool with AI-generated assessments for emotional and spiritual wellness.
-                </p>
-                <div className="flex gap-3">
-                  <a href="#" className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold">
-                    Live Link <ExternalLink size={16} />
-                  </a>
+            {projects.map((project) => (
+              <div key={project.id} className="card-hover bg-white rounded-lg shadow overflow-hidden">
+                <div className={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center`}>
+                  <div className="text-white text-4xl">{project.emoji}</div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2">{project.name}</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    {project.description}
+                  </p>
+                  <div className="flex gap-3">
+                    {project.liveLink && (
+                      <a 
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold"
+                      >
+                        Live Link <ExternalLink size={16} />
+                      </a>
+                    )}
+                    {project.githubLink && (
+                      <a 
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold"
+                      >
+                        GitHub Code <ExternalLink size={16} />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {/* Project 2 */}
-            <div className="card-hover bg-white rounded-lg shadow overflow-hidden">
-              <div className="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
-                <div className="text-white text-4xl">🎮</div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Panic Attack Game Timer</h3>
-                <p className="text-gray-600 mb-4 text-sm">
-                  Frantic word-building party game with real-time sabotage mechanics. Transforms your phone into the center of action.
-                </p>
-                <div className="flex gap-3">
-                  <a href="#" className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold">
-                    Live Link <ExternalLink size={16} />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 3 */}
-            <div className="card-hover bg-white rounded-lg shadow overflow-hidden">
-              <div className="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
-                <div className="text-white text-4xl">🎓</div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Acting Academy App</h3>
-                <p className="text-gray-600 mb-4 text-sm">
-                  Comprehensive learning ecosystem with OTP authentication, course management, video playback, and real-time community features.
-                </p>
-                <div className="flex gap-3">
-                  <a href="#" className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold">
-                    GitHub Code <ExternalLink size={16} />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 4 */}
-            <div className="card-hover bg-white rounded-lg shadow overflow-hidden">
-              <div className="h-48 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
-                <div className="text-white text-4xl">🍔</div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Food LTDS App</h3>
-                <p className="text-gray-600 mb-4 text-sm">
-                  Modular food ordering app with Clean Architecture, dynamic theme system, and optimized networking with Dio.
-                </p>
-                <div className="flex gap-3">
-                  <a href="#" className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold">
-                    GitHub Code <ExternalLink size={16} />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 5 */}
-            <div className="card-hover bg-white rounded-lg shadow overflow-hidden">
-              <div className="h-48 bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
-                <div className="text-white text-4xl">🔗</div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">AntiLure App</h3>
-                <p className="text-gray-600 mb-4 text-sm">
-                  Security app with advanced link analysis, QR code scanning, threat level system, and offline functionality.
-                </p>
-                <div className="flex gap-3">
-                  <a href="#" className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold">
-                    GitHub Code <ExternalLink size={16} />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 6 */}
-            <div className="card-hover bg-white rounded-lg shadow overflow-hidden">
-              <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-                <div className="text-white text-4xl">🎵</div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Sound Zero Audio App</h3>
-                <p className="text-gray-600 mb-4 text-sm">
-                  Premium audio library with 40-50 high-quality files, seamless looping, one-time purchase system, and minimalist player.
-                </p>
-                <div className="flex gap-3">
-                  <a href="#" className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold">
-                    GitHub Code <ExternalLink size={16} />
-                  </a>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -361,18 +289,20 @@ function App() {
 
               <div className="flex gap-4 mt-8">
                 <a
-                  href="https://linkedin.com"
+                  href={personalInfo.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  title="LinkedIn"
                 >
                   <span className="text-lg">in</span>
                 </a>
                 <a
-                  href="https://github.com"
+                  href={personalInfo.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+                  title="GitHub"
                 >
                   <span className="text-lg">🔗</span>
                 </a>
