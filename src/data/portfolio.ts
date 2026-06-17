@@ -4,8 +4,8 @@ export const personalInfo = {
   email: 'nasiruddin3954@gmail.com',
   phone: '+88 01869 639444',
   address: 'Bansree, Dhaka, Bangladesh',
-  linkedin: 'https://linkedin.com/in/nasir-uddin',
-  github: 'https://github.com/nasir-uddin',
+  linkedin: 'https://www.linkedin.com/in/nasir-uddin-874b5024a/',
+  github: 'https://github.com/nasir-uddin-dev',
 };
 
 export const skills = {
